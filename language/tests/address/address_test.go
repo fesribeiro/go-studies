@@ -1,12 +1,14 @@
 // unit test
 
-package address
+package address_test
 
 import (
 	"testing"
+	. "tests/address"
 )
 
 func TestAddressType(t *testing.T) {
+	t.Parallel()
 	tests := []struct {
 		input    string
 		expected string
@@ -22,5 +24,12 @@ func TestAddressType(t *testing.T) {
 		if result != test.expected {
 			t.Errorf("AddressType(%q) = %q; want %q", test.input, result, test.expected)
 		}
+	}
+}
+
+func TestExample(t *testing.T) {
+	t.Parallel()
+	if 1 > 2 {
+		t.Error("This test should not pass")
 	}
 }
